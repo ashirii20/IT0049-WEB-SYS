@@ -1,4 +1,5 @@
 Sample POS System
+
 The project shows a sample of a POS System using CodeIgniter4.
 
 Setup and Run
