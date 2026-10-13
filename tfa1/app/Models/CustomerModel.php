@@ -15,4 +15,9 @@ class CustomerModel extends Model
         'phone',
         'created_at'
     ];
+
+    protected $validationRules = [
+        'full_name' => 'required',
+        'email'     => 'required|valid_email'
+    ];
 }

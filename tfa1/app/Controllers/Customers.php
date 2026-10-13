@@ -12,6 +12,50 @@ class Customers extends BaseController
 
         $data['customers'] = $customerModel->findAll();
 
-        return view('customerAccounts', $data);
+        return view('customers/customerAccounts', $data);
+    }
+
+    public function new()
+    {
+        return view('customers/customerNew');
+    }
+
+    public function create()
+    {
+        $model = new CustomerModel();
+
+        $data = [
+            'full_name' => $this->request->getPost('full_name'),
+            'email'     => $this->request->getPost('email')
+        ];
+
+        if (!$model->insert($data)) {
+            return redirect()->back()
+                ->withInput()
+                ->with('errors', $model->errors());
+        }
+
+        return redirect()->to('/customers/customerAccounts');
+    }
+
+    public function edit($id)
+    {
+        $model = new CustomerModel();
+
+        $data['customer'] = $model->find($id);
+
+        return view('customers/customerEdit', $data);
+    }
+
+    public function update($id)
+    {
+        $model = new CustomerModel();
+
+        $model->update($id, [
+            'full_name' => $this->request->getPost('full_name'),
+            'email'     => $this->request->getPost('email')
+        ]);
+
+        return redirect()->to('/customers/customerAccounts');
     }
 }

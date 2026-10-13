@@ -1,0 +1,122 @@
+*{
+    font-family: Bahnschrift, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.main-content {
+    flex: 1;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background:#bbbec08a;
+}
+
+.navbar{
+    background:#9c25eb !important;
+}
+
+.navbar .nav-link {
+    color: rgba(255,255,255,.85) !important;
+    font-weight: 600;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: white !important;
+    border-bottom: 2px solid white;
+}
+
+.card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.08);
+}
+
+.page-title{
+    color:#eb25c0;
+    font-weight:bold;
+}
+
+.form-label{
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.form-control:focus{
+    border-color:#9c25eb;
+    box-shadow:0 0 0 0.2rem rgba(156,37,235,.25);
+}
+
+.custom-btn {
+    background-color: #9c25eb;
+    color: white;
+    border: none;
+}
+
+.custom-btn:hover {
+    background-color: #eb25c0;
+    color: white;
+}
+
+.count-number{
+    color:#9c25eb;
+    font-size:2rem;
+    font-weight:700;
+}
+
+.table{
+    background:white;
+}
+
+.table thead {
+    background-color: #eb25c0;
+    color: white;
+}
+
+.table thead th {
+    background: #eb25c0;
+    color: white;
+    border: none;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #faf5ff;
+}
+
+.alert-info {
+    background: #f3e8ff;
+    border: 1px solid #eb25c0;
+    color: #eb25c0;
+}
+
+.section-header {
+    background: linear-gradient(135deg, #9c25eb, #eb25c0);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.avatar{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.footer{
+    margin-top: auto;
+    background: #9c25eb;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}

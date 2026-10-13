@@ -37,11 +37,11 @@
         <a class="navbar-brand" href="#">POS System</a>
 
         <div class="navbar-nav ms-auto">
-            <a class="nav-link active" href="<?= site_url('customers'); ?>">
+            <a class="nav-link active" href="<?= site_url('customers/customerAccounts'); ?>">
                 Customers
             </a>
 
-            <a class="nav-link" href="<?= site_url('users'); ?>">
+            <a class="nav-link" href="<?= site_url('users/userAccounts'); ?>">
                 Users
             </a>
         </div>

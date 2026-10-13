@@ -14,4 +14,9 @@ class UserModel extends Model
         'full_name',
         'created_at'
     ];
+
+      protected $validationRules = [
+        'username'  => 'required',
+        'full_name' => 'required'
+    ];
 }

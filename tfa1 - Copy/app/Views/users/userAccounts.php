@@ -38,11 +38,11 @@
         <a class="navbar-brand" href="#">POS System</a>
 
         <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="<?= site_url('customers'); ?>">
+            <a class="nav-link" href="<?= site_url('customers/customerAccounts'); ?>">
                 Customers
             </a>
 
-            <a class="nav-link active" href="<?= site_url('users'); ?>">
+            <a class="nav-link active" href="<?= site_url('users/userAccounts'); ?>">
                 Users
             </a>
         </div>
@@ -83,20 +83,40 @@
             <table class="table table-bordered table-hover">
                 <thead class="table-secondary">
                     <tr>
-                        <th>ID</th>
+                        <th>Avatar</th>
                         <th>Username</th>
                         <th>Full Name</th>
-                        <th>Created At</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <?php foreach ($users as $user): ?>
+                    <?php foreach($users as $user): ?>
                     <tr>
-                        <td><?= $user['id']; ?></td>
-                        <td><?= $user['username']; ?></td>
-                        <td><?= $user['full_name']; ?></td>
-                        <td><?= $user['created_at']; ?></td>
+                        <td>
+                            <?php if(!empty($user['avatar'])): ?>
+                                <img
+                                    src="<?= base_url('uploads/'.$user['avatar']) ?>"
+                                    width="60"
+                                    height="60"
+                                    style="border-radius:50%; object-fit:cover;">
+                             <?php else: ?>
+                                <img
+                                    src="https://via.placeholder.com/60"
+                                    width="60"
+                                    height="60"
+                                    style="border-radius:50%;">
+                            <?php endif; ?>
+                        </td>
+                        <td?><?= esc($user['username']) ?></td>
+                        <td><?= esc($user['full_name']) ?></td>
+                        <td>
+                            <a
+                                href="<?= site_url('users/edit/'.$user['id']) ?>"
+                                class="btn btn-warning">
+                                Edit
+                            </a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
